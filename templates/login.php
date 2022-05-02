@@ -1,5 +1,4 @@
-
-<?php echo $message; ?>
+<?php echo $message;?>
 
 <form name="frmLogin" action="authenticate.php" method="post">
    Student ID:
