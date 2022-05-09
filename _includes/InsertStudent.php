@@ -11,8 +11,9 @@
 
    for ($i = 0; $i <5; $i++)
    {
-      $studentid = $faker->numberBetween(20000001, 99999999);
+      $studentid = $faker->numberBetween(20000001, 50000000);
       $password = password_hash($faker->password(), PASSWORD_DEFAULT);
+      $string_password = (string)$password;
       $dob = $faker->date($format = 'Y-m-d', $max = '-18 years');
       $firstname = $faker->firstName($gender = null | 'male'|'female');
       $lastname = $faker->lastName();
@@ -28,7 +29,7 @@
       VALUES ('$studentID', '$password', '$dob', '$firstName', '$lastName', '$streetAdress', '$town', '$county', '$country',
        '$postCode')";
        
-       $result = mysql_query($conn,$sql);
+       $result = mysqli_query($conn, $sql);
    }
-   
 ?>
+
