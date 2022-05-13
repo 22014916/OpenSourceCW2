@@ -39,7 +39,6 @@ if (isset($_SESSION['id'])) {
       // see http://stackoverflow.com/questions/6924193/what-is-the-use-of-eod-in-php for info
       // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
-
    <h2>My Details</h2>
    <form name="frmdetails" action="" method="post">
    First Name :
@@ -58,7 +57,6 @@ if (isset($_SESSION['id'])) {
    <input name="txtpostcode" type="text"  value="{$row['postcode']}" /><br/>
    <input type="submit" value="Save" name="submit"/>
    </form>
-
 EOD;
 
    }

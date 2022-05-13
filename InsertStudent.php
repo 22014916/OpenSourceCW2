@@ -13,11 +13,10 @@
    {
       $studentid = $faker->numberBetween(20000001, 50000000);
       $password = password_hash($faker->password(), PASSWORD_DEFAULT);
-      $string_password = (string)$password;
       $dob = $faker->date($format = 'Y-m-d', $max = '-18 years');
-      $firstname = $faker->firstName($gender = null | 'male'|'female');
+      $firstname = $faker->firstName($gender = 'male'|'female');
       $lastname = $faker->lastName();
-      $streetAdress = $faker->streetAddress();
+      $streetAddress = $faker->streetAddress();
       $town = "High Wycombe";
       $county = "Buckinghamshrie";
       $country = "United Kingdom";
@@ -26,10 +25,15 @@
       strtoupper($faker->randomLetter()) . strtoupper($faker->randomLetter());
       
       $sql = "INSERT INTO student (studentid, password, dob, firstname, lastname, house, town, county, country, postcode)
-      VALUES ('$studentID', '$password', '$dob', '$firstName', '$lastName', '$streetAdress', '$town', '$county', '$country',
-       '$postCode')";
+      VALUES ('$studentid', '$password', '$dob', '$firstname', '$lastname', '$streetAddress', '$town', '$county', '$country',
+       '$postcode')";
        
        $result = mysqli_query($conn, $sql);
+
+       if ($result)
+       {
+          echo "You have successfully generated 5 random records";
+       }
    }
 ?>
 
