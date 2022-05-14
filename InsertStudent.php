@@ -33,6 +33,8 @@
 
    if ($result)
    {
+      echo template("templates/partials/header.php");
+      echo template("templates/partials/nav.php");
       echo "<h2>You have successfully generated 5 random records</h2>";
    }
 ?>
