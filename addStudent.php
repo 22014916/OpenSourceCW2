@@ -4,6 +4,9 @@ include("_includes/config.inc");
 include("_includes/dbconnect.inc");
 include("_includes/functions.inc");
 
+echo template("templates/partials/header.php");
+echo template("templates/partials/nav.php");
+
 if (isset($_POST['add']) && count($_FILES) > 0)
 {
     if (is_uploaded_file($_FILES['studentphotos']['tmp_name'])) 
@@ -11,18 +14,18 @@ if (isset($_POST['add']) && count($_FILES) > 0)
         $imgData = addslashes(file_get_contents($_FILES['studentphotos']['tmp_name']));
         $imageProperties = getimageSize($_FILES['studentphotos']['tmp_name']);
 
-        $studentID = $_POST['studentID'];
+        $studentID = mysqli_real_escape_string($conn, $_POST['studentID']);
         $password = $_POST['password'];
         //HASHED THE PASSWORD
-        $hashPassword = password_hash($password,PASSWORD_DEFAULT);
-        $DOB = $_POST['DateOfBirth'];
-        $firstname = $_POST['FName'];
-        $lastname = $_POST['LName'];
-        $house = $_POST['House'];
-        $town = $_POST['Town'];
-        $county = $_POST['County'];
-        $country = $_POST['Country'];
-        $postcode = $_POST['Postcode'];
+        $hashPassword = mysqli_real_escape_string($conn,password_hash($password,PASSWORD_DEFAULT));
+        $DOB = mysqli_real_escape_string($conn,$_POST['DateOfBirth']);
+        $firstname = mysqli_real_escape_string($conn,$_POST['FName']);
+        $lastname = mysqli_real_escape_string($conn, $_POST['LName']) ;
+        $house = mysqli_real_escape_string($conn, $_POST['House']);
+        $town = mysqli_real_escape_string($conn,$_POST['Town']) ;
+        $county = mysqli_real_escape_string($conn, $_POST['County']);
+        $country = mysqli_real_escape_string($conn,$_POST['Country']);
+        $postcode = mysqli_real_escape_string($conn,$_POST['Postcode']);
 
         $sql = "INSERT INTO student (studentid, password, dob, firstname, lastname, house, town, county, country, postcode, studentphoto)
         VALUES ('$studentID', '$hashPassword', '$DOB','$firstname', '$lastname', '$house','$town', '$county', '$country','$postcode', '{$imgData}')";
@@ -34,7 +37,7 @@ if (isset($_POST['add']) && count($_FILES) > 0)
 
         if ($result) 
         {
-        echo "New record created successfully";
+        echo "<h2>New record created successfully</h2>";
         }
         elseif($resultTwo)
         {
@@ -49,9 +52,10 @@ if (isset($_POST['add']) && count($_FILES) > 0)
 }
 ?>
 
+
 <form name="frmLogin" action="addStudent.php" method="post" enctype= "multipart/form-data">
    Student ID:
-   <input name="studentID" type="text" placeholder = "e.g.20000001, 50000000"/>
+   <input name="studentID" type="text" placeholder = "e.g.20000001, 50000000" maxlength ="8"/>
    <br/>
    Student Password:
    <input name="password" type="text" placeholder = "e.g.password"/>
@@ -81,7 +85,7 @@ if (isset($_POST['add']) && count($_FILES) > 0)
    <input name="Postcode" type="text" placeholder = "e.g. SL2 2PA"/>
    <br/>
    Insert photo ID file: 
-   <input type="file" name = "studentphotos" id="studentphotos" accept="image/png, image/jpeg">
+   <input type="file" name = "studentphotos" id="studentphotos" accept="image/png, image/jpeg " value = "Browse">
    <br/>
    <input type='submit' name='add' value='Add' class='submitButton'/>
 </form>

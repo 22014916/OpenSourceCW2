@@ -5,7 +5,7 @@
    include("_includes/functions.inc");
 
    $totalStudentCount = intval("SELECT COUNT (DISTINCT studentid) FROM student");
-
+   
    if (isset($_SESSION['id'])) {
 
       echo template("templates/partials/header.php");
@@ -20,11 +20,18 @@
       $data['content'] .= "<tr><th>StudentPhoto</th><th>Studentid</th><th>Password</th><th>DOB</th><th>Firstname</th>
       <th>Lastname</th><th>House</th><th>Town</th><th>County</th><th>Country</th><th>Postcode</th></tr>";
 
+      // $result  = $conn->query("SELECT * FROM student") or die($conn->error);
+      //   $data = $result->fetch_assoc();
+      //   echo "<img src='{$data['studentphoto']}'>";
 
       while($row = mysqli_fetch_array($result)) 
       {
+        // $result  = $conn->query("SELECT * FROM student") or die($conn->error);
+        // $datas = $result->fetch_assoc();
+        // echo "<img src='{$data['studentphoto']}'>";
+
         $data['content'] .= "<tr>";
-        $data['content'] .= "<td> {$row["studentphoto"]} </td>";
+        $data['content'] .= "<td><img src='getimages.php?id=" . $row['studentid'] . "'height='100' width='100'></td>";
         $data['content'] .= "<td> {$row["studentid"]} </td>";
         $data['content'] .= "<td> {$row["password"]} </td>";
         $data['content'] .= "<td> {$row["dob"]} </td>";

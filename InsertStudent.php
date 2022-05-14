@@ -8,7 +8,7 @@
    
    $faker = Faker\Factory::create();
 
-
+   global $result;
    for ($i = 0; $i <5; $i++)
    {
       $studentid = $faker->numberBetween(20000001, 50000000);
@@ -29,11 +29,11 @@
        '$postcode')";
        
        $result = mysqli_query($conn, $sql);
+   }
 
-       if ($result)
-       {
-          echo "You have successfully generated 5 random records";
-       }
+   if ($result)
+   {
+      echo "<h2>You have successfully generated 5 random records</h2>";
    }
 ?>
 
