@@ -52,8 +52,11 @@ if (isset($_POST['add']) && count($_FILES) > 0)
 }
 ?>
 
-
 <form name="frmLogin" action="addStudent.php" method="post" enctype= "multipart/form-data">
+</br>
+</br>
+</br>
+</br>
    Student ID:
    <input name="studentID" type="text" placeholder = "e.g.20000001, 50000000" maxlength ="8"/>
    <br/>
