@@ -35,7 +35,7 @@ if (isset($_SESSION['id'])) {
      $data['content'] .= "<option value='$row[modulecode]'>$row[name]</option>";
    }
    $data['content'] .= "</select><br/>";
-   $data['content'] .= "<center><input type='submit' name='confirm' value='Save' class='submitButton'/></center>";
+   $data['content'] .= "<center><input type='submit' name='confirm' value='Save' class='btn btn-primary'/></center>";
    $data['content'] .= "</form></div>";
   }
 

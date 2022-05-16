@@ -15,10 +15,10 @@
 
       $result = mysqli_query($conn,$sql);
       $data['content'] .= "<div class='center_tables_forms'>";
-      $data['content'] .= "<table class='table'>";
+      $data['content'] .= "<table class='table table-dark table-striped-columns'";
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='5' align='center'>Modules</th></tr>";
-      $data['content'] .= "<tr><th>Code</th><th>Type</th><th>Level</th><th></th></tr>";
+      $data['content'] .= "<tr><th>Code</th><th>Type</th><th>Level</th></tr>";
       // Display the modules within the html table
       while($row = mysqli_fetch_array($result)) {
          $data['content'] .= "<tr><td> $row[modulecode] </td><td> $row[name] </td>";

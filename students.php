@@ -17,7 +17,8 @@
       $data['content'] .= "<div class='center_tables_forms'>";
       $data['content'] .= "<form action = 'deletestudents.php' method = 'POST'>";
       $data['content'] .= "<table class='table table-dark table-striped-columns'";
-        $data['content'] .= "<tr>
+      $data['content'] .= "<table border='1'>";
+      $data['content'] .= "<tr>
         <th>Student Photo</th>
         <th>Student ID</th>
         <th>Password</th>
