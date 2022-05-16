@@ -1,7 +1,4 @@
-<html>
-<body>
-   <link rel="stylesheet" href="css/navbar.css">
-<!-- <div id="main-nav"> -->
+<!-- <div id="a-n1"> -->
 <a class="a-n1" href="modules.php">
         <span></span>
         <span></span>
@@ -50,6 +47,7 @@
         Insert 5 random students
         
     </a>
+
  <a class="a-n1" href="logout.php">
         <span></span>
         <span></span>
@@ -59,6 +57,3 @@
         
     </a>
 
-</div>
-</body>
-</html>

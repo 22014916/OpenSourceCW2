@@ -13,7 +13,8 @@
 
       $sql = "SELECT * FROM student";
       $result = mysqli_query($conn,$sql);
-
+      
+      $data['content'] .= "<div class='center_tables_forms'>";
       $data['content'] .= "<form action = 'deletestudents.php' method = 'POST'>";
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='12' align='center'>Students</th></tr>";

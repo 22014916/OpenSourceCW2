@@ -26,7 +26,7 @@ if (isset($_SESSION['id'])) {
    $result = mysqli_query($conn, $sql);
 
    //Content
-   $data['content'] .= "<div class='selectModuleDiv'><form name='frmassignmodule' action='' method='post' >";
+   $data['content'] .= "<div class='center_tables_forms'>";
    $data['content'] .= "<h3><center>Select a module to assign</center></h3>";
    $data['content'] .= "<center><select name='selmodule' class='selectModule'></center>";
 

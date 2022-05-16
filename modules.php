@@ -3,7 +3,6 @@
    include("_includes/config.inc");
    include("_includes/dbconnect.inc");
    include("_includes/functions.inc");
-   // include ("css/tables.css");
 
    // check logged in
    if (isset($_SESSION['id'])) {
@@ -15,9 +14,8 @@
       $sql = "select * from studentmodules sm, module m where m.modulecode = sm.modulecode and sm.studentid = '" . $_SESSION['id'] ."';";
 
       $result = mysqli_query($conn,$sql);
-
-      
-      $data['content'] .= "<div class='moduleDiv'><table class='moduleList'>";
+      $data['content'] .= "<div class='center_tables_forms'>";
+      $data['content'] .= "<table class='table'>";
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='5' align='center'>Modules</th></tr>";
       $data['content'] .= "<tr><th>Code</th><th>Type</th><th>Level</th><th></th></tr>";
@@ -26,7 +24,7 @@
          $data['content'] .= "<tr><td> $row[modulecode] </td><td> $row[name] </td>";
          $data['content'] .= "<td> $row[level] </td></tr>";
       }
-      $data['content'] .= "</table>";
+      $data['content'] .= "</table></div>";
 
       // render the template
       echo template("templates/default.php", $data);

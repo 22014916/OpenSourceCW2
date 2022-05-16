@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/loginpage.css">
 </head>
-
+<body>
 <form name="frmLogin" action="authenticate.php" method="post">
 <div class="container">
   <div class="header">

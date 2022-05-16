@@ -1,10 +1,11 @@
-/* body{
+body{
     max-height: 6vh;
-     background: #2b3137;  overflow: hidden;
-   margin: 0px;
+     background: grey;  overflow: hidden;
+     margin: 0px;
      padding: 0px;
      display: flex;
-     justify-content: top; align-items: top;
+     justify-content: center; align-items: center;
+     
  }
  
  .a-n1{ margin-left: 20px;
@@ -74,4 +75,10 @@
  .a-n1:hover span:nth-child(4){
      bottom:100%; 
      transition: 0.5s;  transition-delay: 0.75s;
- } */
+ }
+
+ .center_tables_forms{
+    position: absolute;
+    top: 7%;
+    left: 10%;
+  }
