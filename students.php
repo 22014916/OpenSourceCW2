@@ -16,10 +16,21 @@
       
       $data['content'] .= "<div class='center_tables_forms'>";
       $data['content'] .= "<form action = 'deletestudents.php' method = 'POST'>";
-      $data['content'] .= "<table border='1'>";
-      $data['content'] .= "<tr><th colspan='12' align='center'>Students</th></tr>";
-      $data['content'] .= "<tr><th>StudentPhoto</th><th>Studentid</th><th>Password</th><th>DOB</th><th>Firstname</th>
-      <th>Lastname</th><th>House</th><th>Town</th><th>County</th><th>Country</th><th>Postcode</th></tr>";
+      $data['content'] .= "<table class='table table-dark table-striped-columns'";
+        $data['content'] .= "<tr>
+        <th>Student Photo</th>
+        <th>Student ID</th>
+        <th>Password</th>
+        <th>Date of Birth</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>House Address</th>
+        <th>Town/City</th>
+        <th>County</th>
+        <th>Country</th>
+        <th>Postcode</th>
+        <th>Select</th>
+        </tr>";
 
       while($row = mysqli_fetch_array($result)) 
       {
@@ -41,9 +52,8 @@
       }
       
       $data['content'] .= "</table>";
-
-        $data['content'] .= "<input type='submit' name='deleteButton' value='Delete'>";
-        $data['content'] .= "</form>";
+      $data['content'] .= "<input type='submit' name='deleteButton' value='Delete' class='btn btn-primary'/>";
+      $data['content'] .= "</form>";
         
         echo template("templates/default.php", $data);
     } 
