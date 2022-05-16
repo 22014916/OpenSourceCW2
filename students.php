@@ -22,11 +22,11 @@
         <th>Student Photo</th>
         <th>Student ID</th>
         <th>Password</th>
-        <th>Date of Birth</th>
+        <th>Date Of Birth</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>House Address</th>
-        <th>Town/City</th>
+        <th>Town</th>
         <th>County</th>
         <th>Country</th>
         <th>Postcode</th>

@@ -35,7 +35,8 @@
    {
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
-      echo "<h2>You have successfully generated 5 random records</h2>";
+      echo "<div class='center_tables_forms'><h2>You have successfully generated 5 random records</h2></div>";
+      
    }
 ?>
 
