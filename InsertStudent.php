@@ -17,11 +17,11 @@
       $firstname = $faker->firstName($gender = 'male'|'female');
       $lastname = $faker->lastName();
       $streetAddress = $faker->streetAddress();
-      $town = "High Wycombe";
-      $county = "Buckinghamshrie";
+      $town = "Slough";
+      $county = "Berkshire";
       $country = "United Kingdom";
-      $postcode =  "HP1" . $faker->numberBetween(0, 1) . " " . 
-      $faker->randomNumber(2, false) . 
+      $postcode =  "SL" . $faker->numberBetween(0, 1) . " " . 
+      $faker->randomNumber(1, false) . 
       strtoupper($faker->randomLetter()) . strtoupper($faker->randomLetter());
       
       $sql = "INSERT INTO student (studentid, password, dob, firstname, lastname, house, town, county, country, postcode)

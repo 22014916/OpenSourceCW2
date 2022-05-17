@@ -83,3 +83,9 @@ body{
     left: 10%;
   }
 
+.text{
+    position: absolute;
+    top: 7%;
+    left: 35%;
+  }
+
